@@ -1,0 +1,101 @@
+<div id="vehicle-edit-head" class="vehicle">
+   <div id="vehicle-rvt">
+      <img src="/images/rvt_sample-100.png" width="100" height="57" />
+   </div>
+   <div class="vehicle-photo">
+      <img src="/media/photo_cache/demo/__1957-chevrolet-bel-air2_profile.jpg" alt="The Bel Air" title="" />
+   </div>
+   <div id="vehicle-title">
+      <div id="vehicle-year">1959</div>
+      <div id="vehicle-make">Chevrolet</div>
+      <div id="vehicle-model">Bel Air</div>
+   </div>
+   <div class="profile-completion">
+      <span class="completion-percentage">NEEDED: transmission type, transmission speeds...</span>
+      PROFILE COMPLETION: 35%
+      <div class="completion-bar"><span style="width: 35%"></span></div>
+   </div>
+   <!-- /.profile-completion -->
+</div>
+<div id="vehicle-edit-nav">
+	<ul>
+		<li id="specs"><a href="/edit">Vehicle Specs</a></li>
+		<li id="trim" class=""><a href="/edit/trim/">Trim Level</a></li>
+		<li id="modification" class=""><a href="/edit/mods/">Modifications</a></li>
+		<li id="ownership"><a href="/edit/owner/">Ownership</a></li>
+		<li id="documents" class="active"><a href="/edit/documents/">Documents</a></li>
+		<li id="photos" class=""><a href="/edit/photos/">Photos</a></li>
+	</ul>
+</div>
+<!-- /#vehicle-edit-nav -->
+<div id="vehicle-edit-form">  
+	<h1>Documents</h1>
+	<div id="document-data">
+		<span id="document-total">8<sub> Documents</sub></span> <span id="available-space">73<sub> MB Available</sub></span> <a href="#">Upgrade for More Space</a>
+	</div>
+	<form id="documents">
+		<fieldset id="edit-documents">
+			<h2 class="document-category trigger active">Ownership Records <span class="document-count">(3)</span></h2>
+			<div class="collapsable">
+				<table class="document-table" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<td class="document-head">Document</td>
+							<td class="date-head">Date Added</td>
+							<td class="description-head">Description</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="document-name doc"><a href="18.html">Vehicle Title</a></td>
+							<td class="document-date">Aug 21,2003</td>
+							<td class="document-description form-field"><input type="text" value="My new title from DMV" /></td>
+							<td class="document-delete"><a href="#">Delete This Document</a></td>
+						</tr>
+						<tr >
+							<td class="add-document" colspan="4"><a href="/edit/newdoc/">Add Registration Document</a></td>
+						</tr>
+						<tr>
+							<td class="document-name xls"><a href="18.html">Bill of Sale</a></td>
+							<td class="document-date">Aug 21,2003</td>
+							<td class="document-description form-field"><input type="text" value="Albuquerque Dodge" /></td>
+							<td class="document-delete"><a href="#">Delete This Document</a></td>
+						</tr>
+						<tr>
+							<td class="document-name pdf"><a href="18.html">Proof of Insurance</a></td>
+							<td class="document-date">Aug 21,2003</td>
+							<td class="document-description form-field"><input type="text" value="Renewed thru December, 2012" /></td>
+							<td class="document-delete"><a href="#">Delete This Document</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+			<h2 class="document-category trigger">Factory/Dealer/Production Records <span class="document-count">(1)</span></h2>
+			<div class="collapsable hidden">
+				<table class="document-table" cellpadding="0" cellspacing="0">
+					<thead>
+						<tr>
+							<td class="document-head">Document</td>
+							<td class="date-head">Date Added</td>
+							<td class="description-head">Description</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="document-name generic"><a href="18.html">Vehicle Proof of Authenticity</a></td>
+							<td class="document-date">Aug 21,2003</td>
+							<td class="document-description form-field"><input type="text" value="My new title from DMV" /></td>
+							<td class="document-delete"><a href="#">Delete This Document</a></td>
+						</tr>
+						<tr >
+							<td class="add-document" colspan="4"><a href="/edit/newdoc/">Add a Document</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</fieldset>
+		<p id="document-privacy">Note: Your documents will always be protected and private, accessible only by you.</p>
+		<input type="submit" value="Save Changes" class="button" />
+	</form>
+	
+</div> <!-- /#vehicle-edit-form -->

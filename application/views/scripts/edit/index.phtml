@@ -1,0 +1,680 @@
+<div id="vehicle-edit-head" class="vehicle">
+   <div id="vehicle-rvt">
+      <img src="/images/rvt_sample-100.png" width="100" height="57" />
+   </div>
+   <div class="vehicle-photo">
+      <img src="/media/photo_cache/demo/__1957-chevrolet-bel-air2_profile.jpg" alt="The Bel Air" title="" />
+   </div>
+   <div id="vehicle-title">
+      <div id="vehicle-year">1959</div>
+      <div id="vehicle-make">Chevrolet</div>
+      <div id="vehicle-model">Bel Air</div>
+   </div>
+   <div class="profile-completion">
+      <span class="completion-percentage">NEEDED: transmission type, transmission speeds...</span>
+      PROFILE COMPLETION: 35%
+      <div class="completion-bar"><span style="width: 35%"></span></div>
+   </div>
+   <!-- /.profile-completion -->
+</div>
+<div id="vehicle-edit-nav">
+	<ul>
+		<li id="specs" class="active"><a href="/edit">Vehicle Specs</a></li>
+		<li id="trim" class=""><a href="/edit/trim/">Trim Level</a></li>
+		<li id="modification" class=""><a href="/edit/mods/">Modifications</a></li>
+		<li id="ownership" class=""><a href="/edit/ownership/">Ownership</a></li>
+		<li id="documents" class=""><a href="/edit/documents/">Documents</a></li>
+		<li id="photos" class=""><a href="/edit/photos/">Photos</a></li>
+	</ul>
+</div>
+<!-- /#vehicle-edit-nav -->
+<div id="vehicle-edit-form">
+   <form id="vehicle_specs" method="POST" action="/vehicles/demo/1959-chevrolet-bel-air-1/edit/specs/">
+      <div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="cfcb199b35cd013c5683651dab41a9be" /></div>
+      <fieldset id="specs_general">
+         <legend><span>GENERAL</span></legend>
+         <br class="clear" />
+         <div>
+            <label for="id_trim_level">Accent/Model Trim Level</label>
+            <span class="form-field"><input id="id_trim_level" type="text" placeholder="e.g. GT, Shelby, SS, Futura" name="trim_level" maxlength="80" /></span><br class="clear" />
+         </div>
+         <div>
+            <label for="id_vin">VIN</label>
+            <span class="form-field"><input id="id_vin" type="text" name="vin" maxlength="80" /></span>
+            <span class="form-field-extra-help">Your VIN will always remain private.</span>
+            <br class="clear" />
+         </div>
+         <div>
+            <label for="id_category">Category</label>
+            <span class="form-field">
+               <select id="id_category" style="width:250px" data-placeholder="Choose a Category..." class="chzn-select" name="category">
+                  <option value="">---------</option>
+                  <option value="2">Antique</option>
+                  <option value="1">Brass/Edwardian/Vintage</option>
+                  <option value="3" selected="selected">Classic</option>
+                  <option value="7">Custom</option>
+                  <option value="6">Hot Rod</option>
+                  <option value="9">Kit Car</option>
+                  <option value="12">Modern Classic</option>
+                  <option value="4">Motorcycle</option>
+                  <option value="5">Muscle</option>
+                  <option value="11">Race/Off-Road</option>
+                  <option value="10">Truck</option>
+               </select>
+            </span>
+            <br class="clear" />
+         </div>
+         <div>
+            <label for="id_mileage">Mileage</label>
+            <span class="form-field"><input type="text" name="mileage" id="id_mileage" /></span><br class="clear" />
+         </div>
+         <div>
+            <label for="id_mileage_state">Mileage state</label>
+            <span class="form-field">
+               <ul>
+                  <li><input type="radio" id="id_mileage_state_0" value="" name="mileage_state" /><label for="id_mileage_state_0"></label></li>
+                  <li><input checked="checked" type="radio" id="id_mileage_state_1" value="1" name="mileage_state" /><label for="id_mileage_state_1">Actual Mileage</label></li>
+                  <li><input type="radio" id="id_mileage_state_2" value="2" name="mileage_state" /><label for="id_mileage_state_2">True Mileage Unknown (TMU)</label></li>
+                  <li><input type="radio" id="id_mileage_state_3" value="3" name="mileage_state" /><label for="id_mileage_state_3">Current Displayed Mileage</label></li>
+               </ul>
+            </span>
+            <br class="clear" />
+         </div>
+      </fieldset>
+      <fieldset id="specs_engine">
+         <legend><span>ENGINE</span></legend>
+         <div class="factory-specs-title">FACTORY SPECS</div>
+         <div class="current-specs-title">CURRENT SPECS</div>
+         <div class="spec-wrapper">
+            <br class="clear" />
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_cylinders">Cylinders</label>
+                  <span id="fact_cylinders" class="form-field">
+                     <select id="id_fact_cylinders" style="width:250px" data-placeholder="Select # of cylinders ..." class="chzn-select" name="fact_cylinders">
+                        <option value=""></option>
+                        <option value="Inline 4">Inline 4</option>
+                        <option value="Inline 6">Inline 6</option>
+                        <option value="V-6">V-6</option>
+                        <option value="Inline 8">Inline 8</option>
+                        <option value="V-8" selected="selected">V-8</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('cylinders')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_cylinders" style="width:250px" data-placeholder="Select # of cylinders ..." class="chzn-select" name="curr_cylinders">
+                        <option value=""></option>
+                        <option value="Inline 4">Inline 4</option>
+                        <option value="Inline 6">Inline 6</option>
+                        <option value="V-6">V-6</option>
+                        <option value="Inline 8">Inline 8</option>
+                        <option value="V-8" selected="selected">V-8</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <div id="fact_cylinders_other" class="form-field other">
+                     <input id="id_fact_cylinders_other" type="text" name="fact_cylinders_other" maxlength="20" />
+                  </div>
+               </div>
+               <div class="current-specs">
+                  <div id="curr_cylinders_other" class="form-field other">
+                     <input id="id_curr_cylinders_other" type="text" name="curr_cylinders_other" maxlength="20" />
+                  </div>
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_displacement">Displacement</label>
+                  <span class="form-field"><input type="text" name="fact_displacement" value="350" id="id_fact_displacement" /></span>
+                  <span class="form-field">
+                     <select id="id_fact_displacement_units" style="width:150px" data-placeholder="Displacement units..." class="chzn-select" name="fact_displacement_units">
+                        <option value=""></option>
+                        <option value="ci" selected="selected">Cubic Inch</option>
+                        <option value="cc">Cubic Centimeter</option>
+                        <option value="L">Liter</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+               </div>
+               <a onclick="copySpecs('displacement'); copySpecs('displacement_units')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field"><input type="text" name="curr_displacement" value="350" id="id_curr_displacement" /></span>
+                  <span class="form-field">
+                     <select id="id_curr_displacement_units" style="width:150px" data-placeholder="Displacement units..." class="chzn-select" name="curr_displacement_units">
+                        <option value=""></option>
+                        <option value="ci" selected="selected">Cubic Inch</option>
+                        <option value="cc">Cubic Centimeter</option>
+                        <option value="L">Liter</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <div id="fact_displacement_units_other" class="form-field other">
+                     <input id="id_fact_displacement_units_other" type="text" name="fact_displacement_units_other" maxlength="20" />
+                  </div>
+               </div>
+               <div class="current-specs">
+                  <div id="curr_displacement_units_other" class="form-field other">
+                     <input id="id_curr_displacement_units_other" type="text" name="curr_displacement_units_other" maxlength="20" />
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- /spec-wrapper -->
+      </fieldset>
+      <fieldset id="specs_transmission">
+         <legend><span>TRANSMISSION</span></legend>
+         <div class="factory-specs-title">FACTORY SPECS</div>
+         <div class="current-specs-title">CURRENT SPECS</div>
+         <div class="spec-wrapper">
+            <br class="clear" />
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_trans_style">Type</label>
+                  <span class="form-field">
+                     <select id="id_fact_trans_style" style="width:250px" data-placeholder="Select a style ..." class="chzn-select" name="fact_trans_style">
+                        <option value="" selected="selected"></option>
+                        <option value="Manual">Manual</option>
+                        <option value="Automatic">Automatic</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('trans_style')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_trans_style" style="width:250px" data-placeholder=" ..." class="chzn-select" name="curr_trans_style">
+                        <option value="" selected="selected"></option>
+                        <option value="Manual">Manual</option>
+                        <option value="Automatic">Automatic</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_trans_speed">Speed</label>
+                  <span class="form-field">
+                     <select id="id_fact_trans_speed" style="width:250px" data-placeholder="Select an option ..." class="chzn-select" name="fact_trans_speed">
+                        <option value="" selected="selected"></option>
+                        <option value="2 Speed">2 Speed</option>
+                        <option value="3 Speed">3 Speed</option>
+                        <option value="4 Speed">4 Speed</option>
+                        <option value="5 Speed">5 Speed</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('trans_speed')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_trans_speed" style="width:250px" data-placeholder="Select an Option ..." class="chzn-select" name="curr_trans_speed">
+                        <option value="" selected="selected"></option>
+                        <option value="2 Speed">2 Speed</option>
+                        <option value="3 Speed">3 Speed</option>
+                        <option value="4 Speed">4 Speed</option>
+                        <option value="5 Speed">5 Speed</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <div id="fact_trans_speed_other" class="form-field other">
+                     <input id="id_fact_trans_speed_other" type="text" name="fact_trans_speed_other" maxlength="20" />
+                  </div>
+               </div>
+               <div class="current-specs">
+                  <div id="curr_trans_speed_other" class="form-field other">
+                     <input id="id_curr_trans_speed_other" type="text" name="curr_trans_speed_other" maxlength="20" />
+                  </div>
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_trans_overdrive">Overdrive</label>
+                  <span class="form-field">
+                     <select id="id_fact_trans_overdrive" style="width:250px" data-placeholder=" ..." class="chzn-select" name="fact_trans_overdrive">
+                        <option value=""></option>
+                        <option value="0">--------</option>
+                        <option value="1">Overdrive</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('trans_overdrive')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_trans_overdrive" style="width:250px" data-placeholder=" ..." class="chzn-select" name="curr_trans_overdrive">
+                        <option value=""></option>
+                        <option value="0">--------</option>
+                        <option value="1">Overdrive</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+         </div>
+      </fieldset>
+      <fieldset id="specs_drivetrain">
+         <legend><span>DRIVETRAIN</span></legend>
+         <div class="factory-specs-title">FACTORY SPECS</div>
+         <div class="current-specs-title">CURRENT SPECS</div>
+         <div class="spec-wrapper">
+            <br class="clear" />
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_drivetrain">Primary Drive</label>
+                  <span class="form-field">
+                     <select id="id_fact_drivetrain" style="width:250px" data-placeholder="Rear, Front, 4-wheel, All-wheel, other ..." class="chzn-select" name="fact_drivetrain">
+                        <option value="" selected="selected"></option>
+                        <option value="Rear Drive">Rear Drive</option>
+                        <option value="Front Drive">Front Drive</option>
+                        <option value="4 Wheel Drive">4 Wheel Drive</option>
+                        <option value="All Wheel Drive">All Wheel Drive</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('drivetrain')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_drivetrain" style="width:250px" data-placeholder="Rear, Front, 4-wheel, All-wheel, other ..." class="chzn-select" name="curr_drivetrain">
+                        <option value="" selected="selected"></option>
+                        <option value="Rear Drive">Rear Drive</option>
+                        <option value="Front Drive">Front Drive</option>
+                        <option value="4 Wheel Drive">4 Wheel Drive</option>
+                        <option value="All Wheel Drive">All Wheel Drive</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <div id="fact_drivetrain_other" class="form-field other">
+                     <input id="id_fact_drivetrain_other" type="text" name="fact_drivetrain_other" maxlength="20" />
+                  </div>
+               </div>
+               <div class="current-specs">
+                  <div id="curr_drivetrain_other" class="form-field other">
+                     <input id="id_curr_drivetrain_other" type="text" name="curr_drivetrain_other" maxlength="20" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </fieldset>
+      <fieldset id="id_vehicle_specs_exterior">
+         <legend><span>EXTERIOR</span></legend>
+         <div class="factory-specs-title">FACTORY SPECS</div>
+         <div class="current-specs-title">CURRENT SPECS</div>
+         <div class="spec-wrapper">
+            <br class="clear" />
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_ext_color">Body Color</label>
+                  <span class="form-field">
+                     <select id="id_fact_ext_color" style="width:250px" data-placeholder="Exterior color ..." class="chzn-select" name="fact_ext_color">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('ext_color')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_ext_color" style="width:250px" data-placeholder="Exterior color ..." class="chzn-select" name="curr_ext_color">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <div id="fact_ext_color_other" class="form-field other">
+                     <input id="id_fact_ext_color_other" type="text" name="fact_ext_color_other" maxlength="20" />
+                  </div>
+               </div>
+               <div class="current-specs">
+                  <div id="curr_ext_color_other" class="form-field other">
+                     <input id="id_curr_ext_color_other" type="text" name="curr_ext_color_other" maxlength="20" />
+                  </div>
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_ext_accent">Accent</label>
+                  <span class="form-field">
+                     <select id="id_fact_ext_accent" style="width:250px" data-placeholder="Exterior accent ..." class="chzn-select" name="fact_ext_accent">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('ext_accent')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_ext_accent" style="width:250px" data-placeholder="Exterior accent ..." class="chzn-select" name="curr_ext_accent">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <div id="fact_ext_accent_other" class="form-field other">
+                     <input id="id_fact_ext_accent_other" type="text" name="fact_ext_accent_other" maxlength="20" />
+                  </div>
+               </div>
+               <div class="current-specs">
+                  <div id="curr_ext_accent_other" class="form-field other">
+                     <input id="id_curr_ext_accent_other" type="text" name="curr_ext_accent_other" maxlength="20" />
+                  </div>
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_roof_color">Roof Color</label>
+                  <span class="form-field">
+                     <select id="id_fact_roof_color" style="width:250px" data-placeholder="Roof color ..." class="chzn-select" name="fact_roof_color">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('roof_color')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_roof_color" style="width:250px" data-placeholder="Roof color ..." class="chzn-select" name="curr_roof_color">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <div id="fact_roof_color_other" class="form-field other">
+                     <input id="id_fact_roof_color_other" type="text" name="fact_roof_color_other" maxlength="20" />
+                  </div>
+               </div>
+               <div class="current-specs">
+                  <div id="curr_roof_color_other" class="form-field other">
+                     <input id="id_curr_roof_color_other" type="text" name="curr_roof_color_other" maxlength="20" />
+                  </div>
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_stripe_color">Stripe Color</label>
+                  <span class="form-field">
+                     <select id="id_fact_stripe_color" style="width:250px" data-placeholder="Stripe color ..." class="chzn-select" name="fact_stripe_color">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('stripe_color')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_stripe_color" style="width:250px" data-placeholder="Stripe color ..." class="chzn-select" name="curr_stripe_color">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <div id="fact_stripe_color_other" class="form-field other">
+                     <input id="id_fact_stripe_color_other" type="text" name="fact_stripe_color_other" maxlength="20" />
+                  </div>
+               </div>
+               <div class="current-specs">
+                  <div id="curr_stripe_color_other" class="form-field other">
+                     <input id="id_curr_stripe_color_other" type="text" name="curr_stripe_color_other" maxlength="20" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </fieldset>
+      <fieldset id="specs_interior">
+         <legend><span>INTERIOR</span></legend>
+         <div class="factory-specs-title">FACTORY SPECS</div>
+         <div class="current-specs-title">CURRENT SPECS</div>
+         <div class="spec-wrapper">
+            <br class="clear" />
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_int_color">Interior Color</label>
+                  <span class="form-field">
+                     <select id="id_fact_int_color" style="width:250px" data-placeholder="Interior color ..." class="chzn-select" name="fact_int_color">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('int_color')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_int_color" style="width:250px" data-placeholder="Interior color ..." class="chzn-select" name="curr_int_color">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <div id="fact_int_color_other" class="form-field other">
+                     <input id="id_fact_int_color_other" type="text" name="fact_int_color_other" maxlength="20" />
+                  </div>
+               </div>
+               <div class="current-specs">
+                  <div id="curr_int_color_other" class="form-field other">
+                     <input id="id_curr_int_color_other" type="text" name="curr_int_color_other" maxlength="20" />
+                  </div>
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <label for="fact_int_accent">Accent</label>
+                  <span class="form-field">
+                     <select id="id_fact_int_accent" style="width:250px" data-placeholder="Interior accent ..." class="chzn-select" name="fact_int_accent">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+               <a onclick="copySpecs('int_accent')">
+               <span class="copy-specs"><img src="/images/icons/copy_arrow.png" /></span>
+               </a>
+               <div class="current-specs">
+                  <span class="form-field">
+                     <select id="id_curr_int_accent" style="width:250px" data-placeholder="Interior accent ..." class="chzn-select" name="curr_int_accent">
+                        <option value="" selected="selected"></option>
+                        <option value="White">White</option>
+                        <option value="Black">Black</option>
+                        <option value="Red">Red</option>
+                        <option value="Blue">Blue</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Brown">Brown</option>
+                        <option value="Yellow">Yellow</option>
+                        <option value="Gray">Gray</option>
+                        <option value="Green">Green</option>
+                        <option value="other">other</option>
+                     </select>
+                  </span>
+                  <br class="clear" />
+               </div>
+            </div>
+            <div class="specs-row">
+               <div class="factory-specs">
+                  <div id="fact_int_accent_other" class="form-field other">
+                     <input id="id_fact_int_accent_other" type="text" name="fact_int_accent_other" maxlength="20" />
+                  </div>
+               </div>
+               <div class="current-specs">
+                  <div id="curr_int_accent_other" class="form-field other">
+                     <input id="id_curr_int_accent_other" type="text" name="curr_int_accent_other" maxlength="20" />
+                  </div>
+               </div>
+            </div>
+         </div>
+      </fieldset>
+      <input type="submit" value="Save Changes" class="button" />
+   </form>
+</div>
+<!-- /#vehicle-edit-form -->

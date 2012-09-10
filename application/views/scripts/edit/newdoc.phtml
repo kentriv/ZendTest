@@ -1,0 +1,119 @@
+<div id="vehicle-edit-head" class="vehicle">
+	<div id="vehicle-rvt">
+		<img src="/images/rvt_sample-100.png" width="100" height="57" />
+	</div>
+	<div class="vehicle-photo">
+		<img src="/media/photo_cache/demo/__1957-chevrolet-bel-air2_profile.jpg" alt="The Bel Air" title="" />
+	</div>
+	<div id="vehicle-title">
+		<div id="vehicle-year">1959</div>
+		<div id="vehicle-make">Chevrolet</div>
+		<div id="vehicle-model">Bel Air</div>
+	</div>
+	<div class="profile-completion">
+		<span class="completion-percentage"></span>
+		PROFILE COMPLETION: 100%
+		<div class="completion-bar"><span style="width: 100%"></span></div>
+	</div>
+	<!-- /.profile-completion -->
+</div>
+<div id="vehicle-edit-nav">
+	<ul>
+		<li id="specs"><a href="/edit">Vehicle Specs</a></li>
+		<li id="trim" class=""><a href="/edit/trim/">Trim Level</a></li>
+		<li id="modification" class=""><a href="/edit/mods/">Modifications</a></li>
+		<li id="ownership"><a href="/edit/owner/">Ownership</a></li>
+		<li id="documents" class="active"><a href="/edit/documents/">Documents</a></li>
+		<li id="photos" class=""><a href="/edit/photos/">Photos</a></li>
+	</ul>
+</div>
+<!-- /#vehicle-edit-nav -->
+<div id="vehicle-edit-form">
+	<h1 id="document">Add Document</h1>
+	<form id="id_document_form" method="POST" enctype="multipart/form-data" action="/members/demo/vehicles/1959-chevrolet-bel-air-1/documents/0/edit/">
+		<div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="589b0635009723f5566d2dc61ca3a9b9" /></div>
+		<fieldset class="inlineLabels">
+			<input id="id_vehicle" type="hidden" name="vehicle" value="2" />
+			<input id="id_category" type="hidden" name="category" value="7" />
+			<fieldset id="id_vehicle_document">
+				<div class="form-content-wrapper">
+					<div class="document">
+						<label for="id_category">Category</label>
+						<span class="form-field-extra-help">Production Records</span>
+					</div>
+					<div class="document">
+						<label for="id_description">Description</label>
+						<span class="form-field"><input id="id_description" maxlength="200" type="text" name="description" size="80" /></span><br class="clear" />
+					</div>
+					<div class="document">
+						<label for="id_file_name">File</label>
+						<span class="form-field"><input id="id_file_name" type="file" class="required" name="file_name" /></span><br class="clear" />
+					</div>
+					<div class="document">
+						<label for="id_tag">Tags</label>
+						<span class="form-field">
+							<select multiple="multiple" style="width:250px" multiple="" name="tags" data-placeholder="Select an Option..." class="chzn-select" id="id_tags">
+								<optgroup label="Vehicle Categories">
+									<option value="Antique">Antique</option>
+									<option value="Brass/Edwardian/Vintage">Brass/Edwardian/Vintage</option>
+									<option value="Classic">Classic</option>
+									<option value="Custom">Custom</option>
+									<option value="Hot Rod">Hot Rod</option>
+									<option value="Kit Car">Kit Car</option>
+									<option value="Modern Classic">Modern Classic</option>
+									<option value="Motorcycle">Motorcycle</option>
+									<option value="Muscle">Muscle</option>
+									<option value="Race/Off-Road">Race/Off-Road</option>
+									<option value="Truck">Truck</option>
+								</optgroup>
+								<optgroup label="Mechanical">
+									<option value="Engine">Engine</option>
+									<option value="Carburetor">Carburetor</option>
+									<option value="FI">FI</option>
+									<option value="Transmission">Transmission</option>
+									<option value="Drivetrain">Drivetrain</option>
+									<option value="Rear Axle">Rear Axle</option>
+									<option value="Exhaust">Exhaust</option>
+									<option value="Suspension">Suspension</option>
+									<option value="Brakes">Brakes</option>
+									<option value="Steering">Steering</option>
+									<option value="Frame">Frame</option>
+									<option value="Cooling">Cooling</option>
+									<option value="Heating &amp; A/C">Heating &amp; A/C</option>
+								</optgroup>
+								<optgroup label="Appearance">
+									<option value="Body">Body</option>
+									<option value="Paint">Paint</option>
+									<option value="Trim">Trim</option>
+									<option value="Interior">Interior</option>
+									<option value="Dash">Dash</option>
+									<option value="Seats">Seats</option>
+									<option value="Wheels/Tires">Wheels/Tires</option>
+								</optgroup>
+								<optgroup label="Electrical">
+									<option value="Audio">Audio</option>
+									<option value="Instrumentation">Instrumentation</option>
+									<option value="Lighting">Lighting</option>
+									<option value="EMC">EMC</option>
+								</optgroup>
+								<optgroup label="Social/Personal">
+									<option value="Road Trips">Road Trips</option>
+									<option value="Car Shows">Car Shows</option>
+									<option value="Awards">Awards</option>
+									<option value="Racing">Racing</option>
+									<option value="Event">Event</option>
+									<option value="For Sale">For Sale</option>
+								</optgroup>
+							</select>
+						</span>
+						<br class="clear" />
+					</div>
+				</div>
+			</fieldset>
+			<div class="form_block">
+				<input type="submit" value="Save Changes" class="button" />
+			</div>
+		</fieldset>
+	</form>
+</div>
+<!-- /#vehicle-edit-form -->

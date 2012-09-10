@@ -1,0 +1,28 @@
+<div class="add-photos">
+	<h1>Select a Photo of your Vehicle Tag</h1>
+	<p><strong>You can upload JPG, GIF or PNG files less than 5MB in size.</strong> By uploading the file(s) you declare that you have the right to distribute the file and that it does not violate the <a href="">User Agreement</a>.</p>
+    <input type="file" id="file_upload" name="file_upload" />
+    <a class="cancelupload" href="#">Cancel</a>
+    <a class="uploadphotos" href="javascript:$('#file_upload').uploadifyUpload();">Upload Photos</a>
+    
+</div>
+
+<link rel="stylesheet" href="/css/uploadify.css" />
+<script type="text/javascript" src="/js/libs/uploadify/swfobject.js"></script>
+<script src="/js/libs/uploadify/jquery.uploadify.v2.1.4.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#file_upload').uploadify({
+    'uploader'  : '/js/libs/uploadify/uploadify.swf',
+    'script'    : '/js/libs/uploadify/uploadify.php',
+    'cancelImg' : '/js/libs/uploadify/cancel.png',
+    'buttonImg' : '/images/selectfiles.png',
+    'folder'    : 'uploads',
+    'width'     : 148,
+    'height'    : 30,
+    'auto'      : false,
+    'multi'		: false,
+    'simUploadLimit' : 1
+  });
+});
+</script>

@@ -1,0 +1,74 @@
+<div id="vehicle-edit-head" class="vehicle">
+	<div id="vehicle-rvt">
+		<img src="/images/rvt_sample-100.png" width="100" height="57" />
+	</div>
+	<div class="vehicle-photo">
+		<img src="/media/photo_cache/demo/__1957-chevrolet-bel-air2_profile.jpg" alt="The Bel Air" title="" />
+	</div>
+	<div id="vehicle-title">
+		<div id="vehicle-year">1959</div>
+		<div id="vehicle-make">Chevrolet</div>
+		<div id="vehicle-model">Bel Air</div>
+	</div>
+	<div class="profile-completion">
+		<span class="completion-percentage">NEEDED: transmission type, transmission speeds...</span> PROFILE COMPLETION: 35%
+		<div class="completion-bar"><span style="width: 35%"></span></div>
+	</div>
+	<!-- /.profile-completion -->
+</div>
+<div id="vehicle-edit-nav">
+	<ul>
+		<li id="specs"><a href="/edit">Vehicle Specs</a></li>
+		<li id="trim"><a href="/edit/trim/">Trim Level</a></li>
+		<li id="modification"><a href="/edit/mods/">Modifications</a></li>
+		<li id="ownership" class="active"><a href="/edit/owner/">Ownership</a></li>
+		<li id="documents"><a href="/edit/documents/">Documents</a></li>
+		<li id="photos"><a href="/edit/photos/">Photos</a></li>
+	</ul>
+</div> <!-- /#vehicle-edit-nav -->
+<!-- /#vehicle-edit-nav -->
+<div id="vehicle-edit-form">
+	<form id="vehicle_edit" method="POST" action="/vehicles/demo/1959-chevrolet-bel-air-1/edit/mods/">
+		<div style="display:none"><input type="hidden" name="csrfmiddlewaretoken" value="b28b840abe13e3b7ae6ee16d5fbe28d1" /></div>
+		<fieldset id="vehicle-mods">
+			<legend><span>Modifications</span></legend>
+			<p class="form-wide-help mod-help">Describe any custom modifications you've made to your vehicle.</p>
+			<div class="form-content-wrapper clearfix">
+				<label for="id_mod_mechanical">Mechanical:</label>
+				<span class="form-field"><textarea id="id_mod_mechanical" rows="10" cols="40" name="mod_mechanical"></textarea></span>
+				<label for="id_mod_engine">Engine:</label>
+				<span class="form-field"><textarea id="id_mod_engine" rows="10" cols="40" name="mod_engine"></textarea></span>
+				<label for="id_mod_trans">Transmission:</label>
+				<span class="form-field"><textarea id="id_mod_trans" rows="10" cols="40" name="mod_trans"></textarea></span>
+				<label for="id_mod_drivetrain">Drivetrain:</label>
+				<span class="form-field"><textarea id="id_mod_drivetrain" rows="10" cols="40" name="mod_drivetrain"></textarea></span>
+				<label for="id_mod_exhaust">Exhaust:</label>
+				<span class="form-field"><textarea id="id_mod_exhaust" rows="10" cols="40" name="mod_exhaust"></textarea></span>
+				<label for="id_mod_suspension">Suspension:</label>
+				<span class="form-field"><textarea id="id_mod_suspension" rows="10" cols="40" name="mod_suspension"></textarea></span>
+				<label for="id_mod_brakes">Brakes:</label>
+				<span class="form-field"><textarea id="id_mod_brakes" rows="10" cols="40" name="mod_brakes"></textarea></span>
+				<label for="id_mod_steering">Steering:</label>
+				<span class="form-field"><textarea id="id_mod_steering" rows="10" cols="40" name="mod_steering"></textarea></span>
+				<label for="id_mod_appearance">Appearance:</label>
+				<span class="form-field"><textarea id="id_mod_appearance" rows="10" cols="40" name="mod_appearance"></textarea></span>
+				<label for="id_mod_body">Body:</label>
+				<span class="form-field"><textarea id="id_mod_body" rows="10" cols="40" name="mod_body"></textarea></span>
+				<label for="id_mod_interior">Interior:</label>
+				<span class="form-field"><textarea id="id_mod_interior" rows="10" cols="40" name="mod_interior"></textarea></span>
+				<label for="id_mod_wheels">Wheels/Tires:</label>
+				<span class="form-field"><textarea id="id_mod_wheels" rows="10" cols="40" name="mod_wheels"></textarea></span>
+				<label for="id_mod_electrical">Electrical:</label>
+				<span class="form-field"><textarea id="id_mod_electrical" rows="10" cols="40" name="mod_electrical"></textarea></span>
+				<label for="id_mod_audio">Audio:</label>
+				<span class="form-field"><textarea id="id_mod_audio" rows="10" cols="40" name="mod_audio"></textarea></span>
+				<label for="id_mod_lighting">Lightning:</label>
+				<span class="form-field"><textarea id="id_mod_lighting" rows="10" cols="40" name="mod_lighting"></textarea></span>
+				<label for="id_mod_other">Other Modifications:</label>
+				<span class="form-field"><textarea id="id_mod_other" rows="10" cols="40" name="mod_other"></textarea></span>
+			</div>
+		</fieldset>
+		<input type="submit" value="SAVE CHANGES" class="button" />
+	</form>
+</div>
+<!-- /#vehicle-edit-form -->
